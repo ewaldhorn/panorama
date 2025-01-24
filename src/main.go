@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	canvasWidth  = 1000
-	canvasHeight = 700
+	canvasWidth  = 800
+	canvasHeight = 600
 )
 
 var (

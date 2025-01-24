@@ -6,10 +6,10 @@ import (
 )
 
 const (
-	speed = 100 // lower is faster
+	speed = 30 // lower is faster
 	scale = 1.05
-	y     = -4.5 // vertical offset
-	dx    = -4.5
+	y     = 0 // vertical offset
+	dx    = 0.75
 )
 
 var (
@@ -46,7 +46,7 @@ func render() {
 	graphicsContext.ClearRect(0, 0, canvasWidth, canvasHeight)
 
 	// If image is <= canvas size
-	if imgW < canvasWidth {
+	if imgW <= canvasWidth {
 		// reset, start from the beginning
 		if x > canvasWidth {
 			x = -imgW + x

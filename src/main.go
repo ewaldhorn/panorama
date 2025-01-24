@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	canvasWidth  = 300
-	canvasHeight = 300
+	canvasWidth  = 1000
+	canvasHeight = 700
 )
 
 var (
@@ -23,9 +23,6 @@ var (
 //
 //export bootstrapApp
 func bootstrapApp()
-
-//export startAnimation
-func startAnimation()
 
 // ----------------------------------------------------------------------------
 func main() {
@@ -58,11 +55,11 @@ func startup() {
 func createMainCanvas() {
 	canvasBackgroundColour = colour.NewColourBlack()
 	mainCanvas = tinycanvas.NewTinyCanvas(canvasWidth, canvasHeight)
+	mainCanvas.SetInnerText("Somewhere in South Africa")
 	graphicsContext = mainCanvas.GetContext()
 }
 
 // ----------------------------------------------------------------------------
 func setCallbacks() {
 	setVersionCallback()
-	setRefreshEffectCallback()
 }

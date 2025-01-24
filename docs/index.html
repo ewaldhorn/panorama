@@ -36,18 +36,10 @@
 
       let wasm, exports, memory;
 
-      let updateFunction = () => {
-        refreshEffect();
-        requestAnimationFrame(updateFunction);
-      };
-
       // ----------------------------------------------------------------------
       go.importObject.env = {
         bootstrapApp: function () {
           document.getElementById("title").innerHTML = getVersion();
-        },
-        startAnimation: function () {
-          updateFunction();
         },
       };
 

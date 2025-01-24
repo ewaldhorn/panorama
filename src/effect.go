@@ -43,4 +43,21 @@ func setupAnimation() {
 
 // ----------------------------------------------------------------------------
 func render() {
+	graphicsContext.ClearRect(0, 0, canvasWidth, canvasHeight)
+
+	// If image is <= canvas size
+	if imgW < canvasWidth {
+		// reset, start from the beginning
+		if x > canvasWidth {
+			x = -imgW + x
+		}
+
+		if x > 0 {
+			graphicsContext.DrawImage(background, -imgW+x, y)
+		}
+
+		if x-imgW > 0 {
+			graphicsContext.DrawImage(background, -imgW*2+x, y)
+		}
+	}
 }

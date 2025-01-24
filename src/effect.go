@@ -59,5 +59,19 @@ func render() {
 		if x-imgW > 0 {
 			graphicsContext.DrawImage(background, -imgW*2+x, y)
 		}
+	} else {
+		// Image is > canvas size
+		// Reset, start from beginning
+		if x > canvasWidth {
+			x = canvasWidth - imgW
+		}
+
+		if x > canvasWidth-imgW {
+			graphicsContext.DrawImage(background, x-imgW+1, y)
+		}
 	}
+
+	graphicsContext.DrawImage(background, x, y)
+
+	x += dx
 }
